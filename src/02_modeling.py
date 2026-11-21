@@ -1,5 +1,5 @@
 """
-02_modeling.py — Entraînement et comparaison de Decision Tree, Random Forest et KNN
+02_modeling.py  -  Entraînement et comparaison de Decision Tree, Random Forest et KNN
 pour la recommandation de culture à partir des variables sol/climat.
 
 Sortie : reports/classification_report.txt, reports/figures/confusion_matrices.png,
@@ -75,7 +75,7 @@ def run():
     for ax, (name, pred) in zip(axes, preds.items()):
         cm = confusion_matrix(y_test, pred)
         sns.heatmap(cm, cmap="Blues", ax=ax, cbar=False)
-        ax.set_title(f"Matrice de confusion — {name}")
+        ax.set_title(f"Matrice de confusion  -  {name}")
         ax.set_xlabel("Prédit"); ax.set_ylabel("Réel")
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "confusion_matrices.png"), dpi=130)
@@ -92,7 +92,7 @@ def run():
             f.write(f"{name}: Accuracy={r['Accuracy']:.3f} Precision={r['Precision']:.3f} "
                     f"Recall={r['Recall']:.3f} F1={r['F1']:.3f} "
                     f"CV={r['CV_accuracy_mean']:.3f}±{r['CV_accuracy_std']:.3f}\n")
-        f.write(f"\n=== Rapport détaillé — {best_name} (meilleur modèle) ===\n\n")
+        f.write(f"\n=== Rapport détaillé  -  {best_name} (meilleur modèle) ===\n\n")
         f.write(report_txt)
 
     # Importance des variables (Random Forest)
@@ -101,7 +101,7 @@ def run():
         plt.figure(figsize=(8, 5))
         importances.plot(kind="barh", color="forestgreen")
         plt.gca().invert_yaxis()
-        plt.title(f"Importance des variables — {best_name}")
+        plt.title(f"Importance des variables  -  {best_name}")
         plt.tight_layout()
         plt.savefig(os.path.join(FIG_DIR, "feature_importance.png"), dpi=150)
         plt.close()

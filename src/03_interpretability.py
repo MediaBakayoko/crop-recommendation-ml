@@ -1,5 +1,5 @@
 """
-03_interpretability.py — Interprétabilité du modèle Random Forest via SHAP.
+03_interpretability.py  -  Interprétabilité du modèle Random Forest via SHAP.
 Sortie : reports/figures/shap_importance.png, reports/shap_summary.csv
 """
 import os
@@ -43,7 +43,7 @@ def run(sample_size=200):
     plt.figure(figsize=(8, 5))
     shap_importance.plot(kind="barh", color="darkorange")
     plt.gca().invert_yaxis()
-    plt.title("Importance SHAP moyenne (toutes cultures) — Random Forest")
+    plt.title("Importance SHAP moyenne (toutes cultures)  -  Random Forest")
     plt.xlabel("|valeur SHAP| moyenne")
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "shap_importance.png"), dpi=150)

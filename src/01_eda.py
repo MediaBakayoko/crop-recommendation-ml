@@ -1,5 +1,5 @@
 """
-01_eda.py — Analyse exploratoire du Crop Recommendation Dataset (sol & climat).
+01_eda.py  -  Analyse exploratoire du Crop Recommendation Dataset (sol & climat).
 Sortie : reports/figures/distributions.png, correlation_heatmap.png, boxplots_by_crop.png
 """
 import os
@@ -41,7 +41,7 @@ def run():
 
     plt.figure(figsize=(10, 8))
     sns.heatmap(df[NUM_COLS].corr(), annot=True, fmt=".2f", cmap="coolwarm", center=0)
-    plt.title("Matrice de corrélation — variables sol/climat")
+    plt.title("Matrice de corrélation  -  variables sol/climat")
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "correlation_heatmap.png"), dpi=150)
     plt.close()

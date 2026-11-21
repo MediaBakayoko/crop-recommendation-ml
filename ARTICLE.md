@@ -1,14 +1,14 @@
 # Machine Learning for Smart Agriculture : prédire la culture la plus adaptée au sol et au climat
 
-*Média Marcel Bakayoko — Expert géomatique / données géospatiales & agricoles / GeoAI / Suivi-Évaluation*
+*Média Marcel Bakayoko  -  Expert géomatique / données géospatiales & agricoles / GeoAI / Suivi-Évaluation*
 
 ## Le problème
 
 L'agriculture de précision repose sur une question simple en apparence : **quelle culture planter,
 compte tenu des caractéristiques du sol et du climat d'une parcelle donnée ?** En pratique, la
-réponse dépend de l'interaction de nombreux facteurs — teneur en nutriments du sol (azote,
+réponse dépend de l'interaction de nombreux facteurs  -  teneur en nutriments du sol (azote,
 phosphore, potassium), micronutriments (cuivre, fer, magnésium, soufre), pH, température,
-humidité et précipitations — qu'il est difficile d'arbitrer manuellement à grande échelle.
+humidité et précipitations  -  qu'il est difficile d'arbitrer manuellement à grande échelle.
 
 Ce projet explore si un modèle de Machine Learning peut apprendre cette relation à partir de
 données historiques et recommander automatiquement la culture la plus adaptée à un environnement
@@ -23,13 +23,13 @@ azote (N), phosphore (P), potassium (K), cuivre (Cu), fer (Fe), magnésium (Mg),
 température, humidité, pH et précipitations.
 
 Aucune valeur manquante, aucun doublon, classes parfaitement équilibrées (100 observations par
-culture) — un jeu de données propre, conçu pour l'apprentissage et la démonstration méthodologique.
+culture)  -  un jeu de données propre, conçu pour l'apprentissage et la démonstration méthodologique.
 
 **Limite à souligner d'emblée** : ce dataset est dérivé de données agricoles **indiennes**. Les
 plages de température, pluviométrie et composition du sol reflètent le contexte climatique et
 pédologique de l'Inde. Un modèle entraîné ici ne doit pas être utilisé tel quel pour recommander
 des cultures en Côte d'Ivoire ou ailleurs en Afrique de l'Ouest sans réentraînement sur des données
-locales — c'est un exercice pédagogique de bout en bout, pas un outil opérationnel régional.
+locales  -  c'est un exercice pédagogique de bout en bout, pas un outil opérationnel régional.
 
 ## Exploration des données (EDA)
 
@@ -42,14 +42,14 @@ acide à neutre), cohérent avec la plupart des cultures vivrières et de rente.
 
 ![Matrice de corrélation](reports/figures/correlation_heatmap.png)
 
-La matrice de corrélation ne révèle pas de colinéarité forte entre les variables prédictives — un
+La matrice de corrélation ne révèle pas de colinéarité forte entre les variables prédictives  -  un
 point favorable pour la modélisation, chaque variable apportant une information largement
 indépendante.
 
 ![Boxplots par culture](reports/figures/boxplots_by_crop.png)
 
 Les boxplots par culture confirment que chaque culture occupe une niche assez distincte en termes
-de besoins en azote, température, humidité et précipitations — par exemple le riz exige une forte
+de besoins en azote, température, humidité et précipitations  -  par exemple le riz exige une forte
 humidité et des précipitations abondantes, tandis que les légumineuses (lentilles, pois chiches)
 tolèrent des conditions plus sèches avec des besoins en azote plus faibles (elles fixent elles-mêmes
 l'azote atmosphérique).
@@ -68,14 +68,14 @@ avec validation croisée à 5 plis pour écarter tout effet de split favorable :
 ![Matrices de confusion](reports/figures/confusion_matrices.png)
 
 Le Random Forest atteint une **performance parfaite** sur le jeu de test (440 observations, 22
-classes), confirmée par une validation croisée à 99,9% — ce n'est donc pas un artefact de split
+classes), confirmée par une validation croisée à 99,9%  -  ce n'est donc pas un artefact de split
 favorable mais un résultat stable. Cette performance exceptionnelle s'explique par la nature même
 du dataset : chaque culture occupe une « niche » assez bien délimitée dans l'espace des variables
 sol/climat (confirmé par les boxplots ci-dessus), ce qui rend le problème de classification
 particulièrement bien posé pour des méthodes d'ensemble comme Random Forest.
 
 Le Decision Tree seul, plus simple et plus interprétable individuellement, perd en généralisation
-(93,9% contre 100%) — l'agrégation de plusieurs arbres (bootstrap + sélection aléatoire de
+(93,9% contre 100%)  -  l'agrégation de plusieurs arbres (bootstrap + sélection aléatoire de
 variables) du Random Forest réduit la variance et améliore nettement la robustesse. Le KNN,
 sensible à la mise à l'échelle (appliquée ici via standardisation), obtient un résultat intermédiaire
 solide à 97,5%.
@@ -114,14 +114,14 @@ Lancement local : `streamlit run app/dashboard.py`
    nécessiterait un réentraînement sur des données locales (ex. données ANADER, CNRA, ou stations
    agro-météorologiques ivoiriennes).
 2. **Performance « trop parfaite »** : un Random Forest à 100% sur un jeu de test, même confirmé
-   par validation croisée, invite à la prudence scientifique — ce résultat reflète la structure
+   par validation croisée, invite à la prudence scientifique  -  ce résultat reflète la structure
    très séparable du dataset plutôt qu'une garantie de performance sur des données de terrain plus
    bruitées (mesures imprécises, sols hétérogènes à l'échelle de la parcelle, variabilité
    intra-saisonnière).
 3. **Absence de variables agronomiques complémentaires** : type de sol (texture, matière organique),
    disponibilité en eau d'irrigation, pratiques culturales antérieures et rotation des cultures ne
    sont pas incluses, alors qu'elles influencent fortement le choix réel d'une culture sur le terrain.
-4. **Classes a priori homogènes** : 100 observations par culture, sans déséquilibre — un jeu de
+4. **Classes a priori homogènes** : 100 observations par culture, sans déséquilibre  -  un jeu de
    données réel issu d'enquêtes agricoles présenterait probablement un déséquilibre de classes
    nécessitant un traitement spécifique (sur/sous-échantillonnage, pondération).
 

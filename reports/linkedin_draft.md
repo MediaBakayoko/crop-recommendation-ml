@@ -1,40 +1,39 @@
-# Post LinkedIn — brouillon à valider
+# Post LinkedIn  -  brouillon en français (à valider)
 
-🌱 CAN MACHINE LEARNING HELP US MAKE SMARTER AGRICULTURAL DECISIONS?
+🌱 LE MACHINE LEARNING PEUT-IL NOUS AIDER À MIEUX DÉCIDER EN AGRICULTURE ?
 
-I recently completed a Machine Learning project focused on precision agriculture.
+Je viens de terminer un projet de Machine Learning appliqué à l'agriculture de précision.
 
-🎯 Objective: Develop a predictive model capable of recommending suitable crops based on soil
-properties (N, P, K, Cu, Fe, Mg, S, pH) and climatic conditions (temperature, humidity, rainfall).
+🎯 Objectif : développer un modèle capable de recommander la culture la plus adaptée à partir des
+caractéristiques du sol (azote, phosphore, potassium, cuivre, fer, magnésium, soufre, pH) et des
+paramètres climatiques (température, humidité, précipitations).
 
-Using Python and Scikit-learn, I explored 2,200 observations across 22 crops and compared three
-classification algorithms:
-• Decision Tree — 93.9% accuracy
-• Random Forest — 100% accuracy (99.9% in 5-fold cross-validation)
-• K-Nearest Neighbors — 97.5% accuracy
+Avec Python et Scikit-learn, j'ai exploré 2 200 observations réparties sur 22 cultures et comparé
+trois algorithmes de classification :
+• Arbre de décision  -  93,9% de précision
+• Forêt aléatoire (Random Forest)  -  100% de précision (99,9% en validation croisée)
+• K plus proches voisins (KNN)  -  97,5% de précision
 
-📊 Interpretability (Feature Importance + SHAP) converged on the same conclusion: rainfall,
-humidity and potassium are the strongest drivers of crop suitability — climate and fertilization
-matter more than micronutrients in this dataset.
+📊 L'interprétabilité du modèle (Feature Importance + SHAP) converge vers la même conclusion : les
+précipitations, l'humidité et le potassium sont les facteurs les plus déterminants  -  le climat et
+la fertilisation comptent davantage que les micronutriments secondaires.
 
-💻 I also built an interactive Streamlit dashboard where you input soil/climate parameters and get
-an instant crop recommendation with confidence scores.
+💻 J'ai aussi conçu un tableau de bord interactif (Streamlit) : on saisit les paramètres sol/climat
+et on obtient instantanément la culture recommandée avec un score de confiance.
 
-Beyond model accuracy, this project explores how data science can support agricultural
-decision-making, resource optimization and sustainable farming.
+⚠️ Précision scientifique importante : ce jeu de données est construit à partir de données
+agricoles indiennes. C'est un exercice méthodologique, pas un modèle validé pour les conditions
+agro-climatiques ivoiriennes ou ouest-africaines  -  un déploiement réel nécessiterait un
+réentraînement sur des données locales (ANADER, CNRA, SODEXAM). Assumer cette limite me semble
+tout aussi important que la performance du modèle elle-même.
 
-⚠️ Important scientific caveat: this dataset is built from Indian agricultural data. It's a
-methodological exercise, not a model validated for Ivorian or West African agro-climatic
-conditions — a real-world deployment would require retraining on local soil and climate data
-(ANADER, CNRA, SODEXAM). Being explicit about this limitation is, I think, as important as the
-model's accuracy itself.
+Mon objectif reste de développer des solutions concrètes à la croisée de l'Agriculture, des
+Sciences Géospatiales, de la Statistique et de l'Intelligence Artificielle. Parce que l'avenir de
+l'agriculture africaine dépendra aussi de notre capacité à comprendre et exploiter la donnée  -  avec
+rigueur.
 
-My goal is to keep developing practical solutions at the intersection of Agriculture, Geospatial
-Science, Statistics and Artificial Intelligence. Because the future of African agriculture will
-also depend on our ability to understand and leverage data — rigorously.
-
-💻 Full code, methodology and dashboard open-source:
+💻 Code complet, méthodologie et tableau de bord en open-source :
 🔗 https://github.com/MediaBakayoko/crop-recommendation-ml
 
-#MachineLearning #AgriDataScience #PrecisionAgriculture #Python #DataScience
-#ArtificialIntelligence #Africa #GeoAI
+#MachineLearning #AgriDataScience #AgriculturePrecision #Python #DataScience
+#IntelligenceArtificielle #Afrique #GeoAI

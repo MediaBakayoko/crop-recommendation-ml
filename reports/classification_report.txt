@@ -4,7 +4,7 @@ Decision Tree: Accuracy=0.939 Precision=0.914 Recall=0.939 F1=0.924 CV=0.926±0.
 Random Forest: Accuracy=1.000 Precision=1.000 Recall=1.000 F1=1.000 CV=0.999±0.001
 KNN: Accuracy=0.975 Precision=0.977 Recall=0.975 F1=0.975 CV=0.965±0.007
 
-=== Rapport détaillé — Random Forest (meilleur modèle) ===
+=== Rapport détaillé  -  Random Forest (meilleur modèle) ===
 
               precision    recall  f1-score   support
 

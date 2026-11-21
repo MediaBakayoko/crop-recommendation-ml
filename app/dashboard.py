@@ -1,5 +1,5 @@
 """
-app/dashboard.py — Tableau de bord Streamlit pour la recommandation de culture.
+app/dashboard.py  -  Tableau de bord Streamlit pour la recommandation de culture.
 Lancer avec : streamlit run app/dashboard.py
 """
 import os
@@ -29,7 +29,7 @@ st.markdown(
 )
 st.warning(
     "⚠️ Ce jeu de données est construit à partir de données agricoles indiennes. "
-    "Il s'agit d'un exercice pédagogique de démonstration méthodologique — les seuils "
+    "Il s'agit d'un exercice pédagogique de démonstration méthodologique  -  les seuils "
     "ne sont pas directement validés pour les conditions agro-climatiques ivoiriennes."
 )
 
@@ -60,10 +60,10 @@ if st.button("🔍 Prédire la culture recommandée", type="primary"):
     st.success(f"🌾 Culture recommandée : **{crop.upper()}**")
     st.markdown("**Top 3 des cultures les plus probables :**")
     for name, p in top3:
-        st.progress(float(p), text=f"{name} — {p*100:.1f}%")
+        st.progress(float(p), text=f"{name}  -  {p*100:.1f}%")
 
 st.markdown("---")
 st.caption(
     "Projet : *Machine Learning for Smart Agriculture: Predicting the Most Suitable Crop "
-    "Based on Soil and Climatic Conditions* — code source sur GitHub."
+    "Based on Soil and Climatic Conditions*  -  code source sur GitHub."
 )

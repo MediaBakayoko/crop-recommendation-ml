@@ -5,13 +5,13 @@ Comment utiliser les caractéristiques du sol et les paramètres climatiques pou
 culture agricole la plus adaptée à un environnement donné ?
 
 ## Données
-**Crop Recommendation Dataset** — 2 200 observations, 22 cultures, variables de sol (N, P, K,
+**Crop Recommendation Dataset**  -  2 200 observations, 22 cultures, variables de sol (N, P, K,
 Cu, Fe, Mg, S, pH) et de climat (température, humidité, précipitations).
 
-- Source principale : Kaggle — Atharva Ingle —
+- Source principale : Kaggle  -  Atharva Ingle  - 
   https://www.kaggle.com/atharvaingle/crop-recommendation-dataset
 - Version utilisée dans ce dépôt (11 variables, incluant Cu/Fe/Mg/S) : Mendeley Data (2025),
-  licence CC BY 4.0 — https://data.mendeley.com/datasets/7j8cz7p7w9
+  licence CC BY 4.0  -  https://data.mendeley.com/datasets/7j8cz7p7w9
 - Fichier local : `data/raw/crop_recommendation.csv`
 
 > ⚠️ **Limite méthodologique importante** : ce jeu de données est construit à partir de données
@@ -45,7 +45,7 @@ Développer un modèle de classification capable de prédire la culture la plus 
 | KNN (k=5) | 97,5% | 97,7% | 97,5% | 97,5% | 96,5% ± 0,7% |
 
 Random Forest obtient une performance parfaite sur le jeu de test et quasi-parfaite en validation
-croisée — confirmé par CV (pas un artefact de split), ce qui s'explique par la forte séparabilité
+croisée  -  confirmé par CV (pas un artefact de split), ce qui s'explique par la forte séparabilité
 des classes dans ce dataset synthétique/semi-synthétique bien structuré.
 
 Variables les plus discriminantes (Feature Importance + SHAP) : **humidité, potassium (K), azote
@@ -65,7 +65,7 @@ Voir [`ARTICLE.md`](ARTICLE.md) pour l'analyse narrative complète avec interpr�
 résultats, graphiques et discussion des limites.
 
 ## Auteur
-Média Marcel Bakayoko — Expert géomatique / données géospatiales & agricoles / GeoAI / Suivi-Évaluation.
+Média Marcel Bakayoko  -  Expert géomatique / données géospatiales & agricoles / GeoAI / Suivi-Évaluation.
 
 ## Licence des données
-Crop Recommendation Dataset — CC BY 4.0 (Mendeley Data / Kaggle, données agricoles indiennes).
+Crop Recommendation Dataset  -  CC BY 4.0 (Mendeley Data / Kaggle, données agricoles indiennes).
